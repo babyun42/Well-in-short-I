@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>бабуин.ком.html</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+                   background-color: #111;
+                   height: 100vh;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   margin: 0;
+                   overflow: hidden;
+               }
+
+               /* Анимация дикого переливания рамки */
+               @keyframes border-madness {
+                   0% { border-color: #ff00ff; box-shadow: 0 0 40px #ff00ff; }
+                   33% { border-color: #00ff00; box-shadow: 0 0 40px #00ff00; }
+                   66% { border-color: #ffff00; box-shadow: 0 0 40px #ffff00; }
+                   100% { border-color: #ff00ff; box-shadow: 0 0 40px #ff00ff; }
+               }
+
+               /* Анимация вращения текста внутри при наведении */
+               @keyframes text-spin {
+                   0% { transform: rotate(0deg); }
+                   100% { transform: rotate(360deg); }
+               }
+
+               /* Безумная статичная кнопка */
+               .static-trash-btn {
+                   display: inline-block;
+                   text-decoration: none;
+
+                   /* Цвета и шрифты */
+                   background: repeating-radial-gradient(circle, #ff0000, #ff0000 10px, #000 10px, #000 20px);
+                   color: #00ffff;
+                   font-family: "Impact", "Arial Black", sans-serif;
+                   font-size: 32px;
+                   font-weight: bold;
+                   text-transform: uppercase;
+                   letter-spacing: 5px;
+                   text-shadow: 4px 4px 0px #000;
+
+                   /* Форма и безумные границы */
+                   padding: 30px 60px;
+                   border: 12px double #ff00ff;
+                   border-radius: 50px 0px 50px 0px; /* Асимметричные углы */
+
+                   /* Запуск анимации для рамки */
+                   animation: border-madness 0.3s infinite linear;
+
+                   /* Плавность эффекта наведения */
+                   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                   cursor: pointer;
+               }
+
+               /* Эффекты при наведении мыши (кнопка НЕ убегает) */
+               .static-trash-btn:hover {
+                   transform: scale(1.4) rotate(-5deg); /* Сильно увеличивается и наклоняется */
+                   background: #ffff00;
+                   color: #ff00ff;
+                   text-shadow: -3px -3px 0px #000;
+                   border-style: dashed;
+               }
+
+               /* Стили для текста внутри, чтобы он крутился отдельно */
+               .static-trash-btn:hover span {
+                   display: inline-block;
+                   animation: text-spin 0.5s infinite linear;
+               }
+
+               /* Эффект при самом клике */
+               .static-trash-btn:active {
+                   transform: scale(0.8) rotate(10deg); /* Сжимается при нажатии */
+               }
+
+        /* Безумный переливающийся фон всей страницы */
+        @keyframes rainbow-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Текст, у которого едет крыша */
+        @keyframes text-shake {
+            0% { transform: translate(2px, 1px) rotate(0deg); color: #ff0000; }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); color: #00ff00; }
+            20% { transform: translate(-3px, 0px) rotate(1deg); color: #0000ff; }
+            30% { transform: translate(0px, 2px) rotate(0deg); color: #ffff00; }
+            40% { transform: translate(1px, -1px) rotate(1deg); color: #ff00ff; }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); color: #00ffff; }
+            60% { transform: translate(-3px, 1px) rotate(0deg); color: #ffffff; }
+            70% { transform: translate(2px, 1px) rotate(-1deg); color: #ffa500; }
+            80% { transform: translate(-1px, -1px) rotate(1deg); color: #7000ff; }
+            90% { transform: translate(2px, 2px) rotate(0deg); color: #00ffaa; }
+            100% { transform: translate(1px, -2px) rotate(-1deg); color: #ff0000; }
+        }
+
+        /* Сумасшедшее вращение и пульсация для кнопки */
+        @keyframes mega-flex {
+            0% { transform: scale(1) rotate(0deg); filter: hue-rotate(0deg); }
+            25% { transform: scale(1.5) rotate(15deg); filter: hue-rotate(90deg); }
+            50% { transform: scale(0.5) rotate(-15deg); filter: hue-rotate(180deg); }
+            75% { transform: scale(1.8) rotate(360deg); filter: hue-rotate(270deg); }
+            100% { transform: scale(1) rotate(0deg); filter: hue-rotate(360deg); }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: rainbow-bg 2s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            /* Ссылка на вашу картинку, а auto — запасной вариант, если картинка не загрузится */
+            cursor: url('https://play.vsthemes.org/t-cursors/45647/471ab378cf8d4ca5a5f52e68ee61e29f.webp?md5=GJXtjoMiLxngWmfHP9DdxQ&expires=1792837399'), auto;
+
+        }
+
+        /* Главная коробка боли */
+        .mega-trash-box {
+            background-image: url('https://giphy.com'),
+            linear-gradient(to bottom, #00ffff, #ff00ff);
+            background-blend-mode: difference;
+            border: 20px ridge #39ff14;
+            padding: 50px;
+            width: 500px;
+            text-align: center;
+            outline: 15px dashed #ff007f;
+            box-shadow: inset 0 0 50px #000, 30px 30px 0px rgba(0,0,0,0.7);
+            transform: rotate(2deg) scale(1);
+        }
+
+        /* Бегущая строка в стиле 1999 года */
+        .trash-marquee {
+            background-color: #000;
+            color: #00ff00;
+            font-family: monospace;
+            padding: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Трясущийся заголовок */
+        .glitch-head {
+            font-family: 'Webdings', 'Comic Sans MS', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: -5px;
+            margin: 0 0 20px 0;
+            animation: text-shake 0.1s infinite;
+        }
+
+        /* Вырвиглазный текст */
+        .pain-text {
+            font-family: "Courier New", monospace;
+            font-size: 22px;
+            font-weight: 900;
+            color: #000;
+            background-color: #ffff00;
+            border: 3px dotted #ff0000;
+            padding: 10px;
+            transform: skewY(4deg);
+            word-spacing: -5px;
+        }
+
+        /* Кнопка-Убийца */
+        .doom-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 25px 50px;
+            font-family: "Impact", sans-serif;
+            font-size: 35px;
+            color: #ffffff;
+            background: #000000;
+            text-decoration: none;
+            border: 10px double #ff0000;
+            border-radius: 0px 50px 0px 50px;
+            box-shadow: 0 0 40px #00ff00;
+        }
+
+        /* При наведении кнопка ломает пространство и время */
+        .doom-button:hover {
+            animation: mega-flex 0.1s infinite linear;
+            background: #ffff00;
+            color: #ff0000;
+        }
+
+        .bg-blur {
+            /* Позиционирование на весь экран */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* Уводит картинку на задний план под текст */
+
+            /* Растягивание без искажения пропорций */
+            object-fit: cover;
+
+            /* Эффект размытия */
+            filter: blur(10px);
+
+            /* Убираем белые края, которые появляются из-за блюра */
+            transform: scale(1.1);
+        }
+
+        /* Стили для контента поверх картинки (необязательно) */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 20vh;
+        }
+
+        /* ===== Панель с постами из ТГК (справа от карточки) ===== */
+        .tg-panel {
+            position: fixed;
+            top: 5vh;
+            left: calc(50% + 330px);
+            width: 340px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            border: 8px ridge #ffff00;
+            outline: 6px dashed #00ffff;
+            box-shadow: 0 0 40px #ff00ff, 15px 15px 0 rgba(0,0,0,0.7);
+            transform: rotate(-1.5deg);
+            font-family: "Courier New", monospace;
+            color: #00ff00;
+        }
+        .tg-head {
+            padding: 8px;
+            background: #ff00ff;
+            color: #fff;
+            font: bold 18px "Impact", sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .tg-counter {
+            padding: 4px;
+            background: #ffff00;
+            color: #000;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+        }
+        .tg-posts { overflow-y: auto; padding: 10px; flex: 1; }
+        .tg-post {
+            margin-bottom: 12px;
+            padding: 8px;
+            border: 2px dotted #ff0000;
+            background: #111;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .tg-post a { color: #00ffff; font-size: 12px; display: block; margin-top: 6px; }
+        /* На узких экранах панель не помещается — прячем */
+
+        /* ===== Планшет и телефон: панель уходит ПОД карточку, страница скроллится ===== */
+        @media (max-width: 1050px) {
+            body {
+                height: auto;
+                min-height: 100vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 0;
+            }
+            .tg-panel {
+                position: static;
+                left: auto;
+                top: auto;
+                width: 92vw;
+                max-width: 500px;
+                height: auto;
+                max-height: 75vh;
+                margin: 50px 0 20px;
+                transform: rotate(-1deg);
+            }
+        }
+
+        /* ===== Телефон: уменьшаем размеры карточки ===== */
+        @media (max-width: 600px) {
+            .mega-trash-box {
+                width: 86vw;
+                padding: 18px;
+                border-width: 12px;
+                outline-width: 8px;
+                box-shadow: inset 0 0 30px #000, 12px 12px 0 rgba(0,0,0,0.7);
+            }
+            .glitch-head { font-size: 34px; letter-spacing: -3px; }
+            .trash-marquee { font-size: 12px; }
+            .pain-text { font-size: 15px; word-spacing: -3px; }
+            .doom-button {
+                display: block;
+                margin-top: 25px;
+                padding: 14px 12px;
+                font-size: 22px;
+                border-width: 8px;
+            }
+            .static-trash-btn {
+                display: block;
+                margin-top: 22px;
+                padding: 16px 10px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                border-width: 8px;
+            }
+            /* на тач-экране :hover «залипает» после тапа — не раздуваем кнопку */
+            .static-trash-btn:hover { transform: scale(1.04) rotate(-3deg); }
+            .tg-panel { width: 86vw; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Сама картинка -->
+    <img src="data:image/jpeg;base64,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" alt="Фон" class="bg-blur">
+
+    <!-- Контент поверх фона -->
+    <div class="mega-trash-box">
+            <h1 class="glitch-head">БАБУин / КАМ</h1>
+
+            <!-- Старая добрая бегущая строка -->
+            <marquee class="trash-marquee" scrollamount="10">
+                МЕГА САЙТ БАБУИНА42 ВЫ РЕАЛЬНО КРУТЫЕ ЕСЛИ ПОПАЛИ СЮДА , ЗАХОДИТЕ КО МНЕ НА ГИТХАБ И СТАВТЕ ЛАЙК НА МОЙ ТУЗ , И В МОЙ ТГК !!!
+            </marquee>
+
+            <p class="pain-text">
+                ВНИМАНИЕ! ТВОЙ БРАУЗЕР ЗАРАЖЕН ВИРУСОМ бабуЛИка!!! СРОЧНО НАЖМИ КНОПКУ ЧТОБЫ СКАЧАТЬ ОПЕРАТИВНУЮ ПАМЯТЬ!!! БЕСПЛАТНО!!!
+            </p>
+
+            <a href="https://github.com/babyun42" target="_blank" class="doom-button" onmouseover="playExplosion()">
+                Я ГИТХАБ СОБАКА БЛИЛЯ МИНЯ НАДО ТЫНУТЬ!!!!
+            </a>
+
+            <a href="https://t.me/Babyun_posts" class="static-trash-btn" onmouseover="playExplosion()">
+                <span>сука я тгк этого дауна</span>
+            </a>
+
+    </div>
+
+
+
+    <!-- Панель с постами из ТГК + счётчик уникальных -->
+    <aside class="tg-panel">
+        <div class="tg-head">ПОСТЫ ИЗ ТГК</div>
+        <div class="tg-counter">УНИКАЛЬНЫХ ЛЮДЕЙ: <span id="visitors">...</span></div>
+        <div class="tg-posts" id="tg-posts">загрузка...</div>
+    </aside>
+
+    <script>
+        // Функция для воспроизведения лазера/взрыва с помощью встроенного синтезатора звука браузера
+        function playExplosion() {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(300, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.3, ctx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.3);
+        }
+    
+        // Счётчик уникальных посетителей
+        fetch('counter.php')
+            .then(r => r.json())
+            .then(d => { document.getElementById('visitors').textContent = d.count; })
+            .catch(() => { document.getElementById('visitors').textContent = '???'; });
+
+        // Посты из ТГК (textContent — безопасно, HTML из поста не исполнится)
+        fetch('tg.php')
+            .then(r => r.json())
+            .then(posts => {
+                const box = document.getElementById('tg-posts');
+                box.textContent = '';
+                if (!posts.length) { box.textContent = 'постов нет :('; return; }
+                posts.forEach(p => {
+                    const div = document.createElement('div');
+                    div.className = 'tg-post';
+                    div.textContent = p.text;
+                    if (p.link.startsWith('https://t.me/')) {
+                        const a = document.createElement('a');
+                        a.href = p.link; a.target = '_blank';
+                        a.textContent = p.date ? new Date(p.date).toLocaleString('ru-RU') : 'открыть';
+                        div.appendChild(a);
+                    }
+                    box.appendChild(div);
+                });
+            })
+            .catch(() => { document.getElementById('tg-posts').textContent = 'не загрузилось'; });
+    </script>
+
+</body>
+</html>
